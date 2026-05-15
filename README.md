@@ -1,2 +1,22 @@
-# jennas-kitchen-website
-A responsive recipe website built with HTML, CSS, and JavaScript as a collaborative web project.
+# Jenna’s Kitchen Website
+
+A responsive recipe website built with HTML, CSS, JavaScript, and Bootstrap.
+
+## Features
+- Responsive layout
+- Interactive recipe cards
+- Recipe detail pages
+- Dynamic images
+- Clean and organized UI
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+
+## Live Demo
+Add your GitHub Pages link here.
+
+## GitHub Repository
+Add your repository link here.
