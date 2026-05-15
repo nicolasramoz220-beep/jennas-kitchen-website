@@ -15,8 +15,4 @@ A responsive recipe website built with HTML, CSS, JavaScript, and Bootstrap.
 - JavaScript
 - Bootstrap
 
-## Live Demo
-Add your GitHub Pages link here.
 
-## GitHub Repository
-Add your repository link here.
