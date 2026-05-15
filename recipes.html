@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jenna's Kitchen</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- My CSS -->
+    <link href="./recipes.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="./index.html">Home</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="./aboutPage.html">About Page</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="./recipes.html">Our Recipes</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="./Extra.html">Store</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="header-overlay">
+        <h1 class="Recipes_title">View our recipes</h1>
+        <p class="subtitle">Choose your favorite meals and desserts</p>
+    </div>
+</header>
+
+<!-- Search Section -->
+<div class="container text-center my-4">
+    <input class="ingredients form-control mb-3" placeholder="Enter a recipe, meal type, or ingredient">
+
+    <p class="ingredient-text">Ingredients entered: </p>
+
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <button onclick="addIngredients()" class="btn btn-primary btn-lg">Add Ingredients</button>
+        <button onclick="recipeSearch()" class="btn btn-success btn-lg">Recipe Search</button>
+        <button onclick="newSearch()" class="btn btn-danger btn-lg">Start Over</button>
+    </div>
+
+    <p id="noResults" class="no-results d-none">No recipes found.</p>
+</div>
+
+<!-- Recipes Section -->
+<section class="recipes-section container">
+    <div class="row g-4">
+
+        <!-- Pancakes -->
+        <div class="col-md-6 col-lg-4 recipe-item"
+             data-title="pancakes"
+             data-type="breakfast"
+             data-ingredients="flour milk egg sugar baking powder syrup fruit">
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=500" alt="Pancakes">
+
+                <div class="recipe-card-body">
+                    <h3>Pancakes</h3>
+                    <p>Soft and sweet pancakes, perfect for breakfast with syrup and fruit.</p>
+
+                    <div class="recipe-info-line">
+                        <span class="recipe-type">Breakfast</span>
+                        <span class="stars">★★★★☆</span>
+                    </div>
+
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button onclick="openRecipe('pancakes')" class="btn btn-sm btn-dark">
+                            View Recipe
+                        </button>
+
+                        <button onclick="saveFavorite('pancakes')" class="btn btn-sm btn-outline-danger">
+                            ❤️ Favorite
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salad -->
+        <div class="col-md-6 col-lg-4 recipe-item"
+             data-title="fresh salad"
+             data-type="lunch"
+             data-ingredients="lettuce tomatoes cucumber carrots olive oil salt pepper vegetables">
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500" alt="Salad">
+
+                <div class="recipe-card-body">
+                    <h3>Fresh Salad</h3>
+                    <p>A healthy salad with vegetables and a light homemade dressing.</p>
+
+                    <div class="recipe-info-line">
+                        <span class="recipe-type">Lunch</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button onclick="openRecipe('salad')" class="btn btn-sm btn-dark">
+                            View Recipe
+                        </button>
+
+                        <button onclick="saveFavorite('salad')" class="btn btn-sm btn-outline-danger">
+                            ❤️ Favorite
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pasta -->
+        <div class="col-md-6 col-lg-4 recipe-item"
+             data-title="creamy pasta"
+             data-type="dinner"
+             data-ingredients="pasta cream cheese garlic herbs salt">
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=500" alt="Pasta">
+
+                <div class="recipe-card-body">
+                    <h3>Creamy Pasta</h3>
+                    <p>Delicious pasta with creamy sauce, cheese, and fresh herbs.</p>
+
+                    <div class="recipe-info-line">
+                        <span class="recipe-type">Dinner</span>
+                        <span class="stars">★★★★☆</span>
+                    </div>
+
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button onclick="openRecipe('pasta')" class="btn btn-sm btn-dark">
+                            View Recipe
+                        </button>
+
+                        <button onclick="saveFavorite('pasta')" class="btn btn-sm btn-outline-danger">
+                            ❤️ Favorite
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chocolate Cake -->
+        <div class="col-md-6 col-lg-4 recipe-item"
+             data-title="chocolate cake"
+             data-type="dessert"
+             data-ingredients="flour sugar cocoa eggs milk butter baking powder chocolate">
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500" alt="Cake">
+
+                <div class="recipe-card-body">
+                    <h3>Chocolate Cake</h3>
+                    <p>Rich chocolate cake for dessert lovers and special occasions.</p>
+
+                    <div class="recipe-info-line">
+                        <span class="recipe-type">Dessert</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button onclick="openRecipe('cake')" class="btn btn-sm btn-dark">
+                            View Recipe
+                        </button>
+
+                        <button onclick="saveFavorite('cake')" class="btn btn-sm btn-outline-danger">
+                            ❤️ Favorite
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Omelette -->
+        <div class="col-md-6 col-lg-4 recipe-item"
+             data-title="cheese omelette"
+             data-type="breakfast"
+             data-ingredients="egg cheese milk salt pepper butter">
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500" alt="Omelette">
+
+                <div class="recipe-card-body">
+                    <h3>Cheese Omelette</h3>
+                    <p>A simple breakfast made with eggs, cheese, and light seasoning.</p>
+
+                    <div class="recipe-info-line">
+                        <span class="recipe-type">Breakfast</span>
+                        <span class="stars">★★★★☆</span>
+                    </div>
+
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button onclick="openRecipe('omelette')" class="btn btn-sm btn-dark">
+                            View Recipe
+                        </button>
+
+                        <button onclick="saveFavorite('omelette')" class="btn btn-sm btn-outline-danger">
+                            ❤️ Favorite
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chicken Rice -->
+        <div class="col-md-6 col-lg-4 recipe-item"
+             data-title="chicken rice"
+             data-type="dinner"
+             data-ingredients="chicken rice garlic onion salt pepper olive oil">
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500" alt="Chicken Rice">
+
+                <div class="recipe-card-body">
+                    <h3>Chicken Rice</h3>
+                    <p>A warm dinner with chicken, rice, garlic, and simple spices.</p>
+
+                    <div class="recipe-info-line">
+                        <span class="recipe-type">Dinner</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button onclick="openRecipe('chickenRice')" class="btn btn-sm btn-dark">
+                            View Recipe
+                        </button>
+
+                        <button onclick="saveFavorite('chickenRice')" class="btn btn-sm btn-outline-danger">
+                            ❤️ Favorite
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Favorite Recipes Section -->
+<section class="container my-5 text-center">
+    <h2>Favorite Recipes</h2>
+    <div id="favoriteRecipes">No favorite recipes yet.</div>
+</section>
+
+<!-- Recipe Modal -->
+<div class="modal fade" id="recipeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content recipe-modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="recipeModalLabel">Recipe Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <h6>Ingredients:</h6>
+        <ul id="recipeIngredients"></ul>
+
+        <h6>Instructions:</h6>
+        <p id="recipeInstructions"></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-flex">
+
+    <div class="footer-col">
+      <p><strong>Contact:</strong> Jenna</p>
+      <p>Email: JennaKitchen@email.com</p>
+      <p>Phone: 123-647-0139</p>
+    </div>
+
+    <div class="footer-col">
+      <p><strong>Address</strong></p>
+      <p>12 Lafayette street<br>New York, NY</p>
+    </div>
+
+    <div class="footer-col">
+      <p><strong>Follow Us</strong></p>
+
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram">
+          <svg class="social-svg" viewBox="0 0 24 24">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 4a4 4 0 1 1 0 8a4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4a2 2 0 0 0 0-4zm5.5-2.5a1 1 0 1 1 0 2a1 1 0 0 1 0-2z"/>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="TikTok">
+          <svg class="social-svg" viewBox="0 0 24 24">
+            <path d="M16 3c.4 2.4 1.9 4.1 4 4.5v3c-1.5 0-2.8-.4-4-1.2V16a5 5 0 1 1-5-5c.3 0 .7 0 1 .1v3.2c-.3-.1-.6-.2-1-.2a2 2 0 1 0 2 2V3h3z"/>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="Facebook">
+          <svg class="social-svg" viewBox="0 0 24 24">
+            <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v6h4v-6h3l1-4h-4V9c0-.6.4-1 1-1z"/>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="YouTube">
+          <svg class="social-svg" viewBox="0 0 24 24">
+            <path d="M21.6 7.2s-.2-1.5-.8-2.1c-.8-.8-1.7-.8-2.1-.9C15.8 4 12 4 12 4s-3.8 0-6.7.2c-.4.1-1.3.1-2.1.9c-.6.6-.8 2.1-.8 2.1S2 9 2 10.8v1.7c0 1.8.4 3.6.4 3.6s.2 1.5.8 2.1c.8.8 1.9.8 2.4.9c1.7.2 6.4.2 6.4.2s3.8 0 6.7-.3c.4 0 1.3-.1 2.1-.9c.6-.6.8-2.1.8-2.1s.4-1.8.4-3.6v-1.7c0-1.8-.4-3.5-.4-3.5zM10 14.8V8.9l5.2 3l-5.2 2.9z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="footer-line">
+
+  <p class="footer-copy">© 2026 Jenna's Kitchen. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS first -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your JavaScript after Bootstrap -->
+<script src="./recipes.js"></script>
+
+</body>
+</html>
