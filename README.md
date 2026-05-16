@@ -1,6 +1,6 @@
 # Jenna’s Kitchen Website
 
-A responsive recipe website built with HTML,CSS,JavaScript,and Bootstrap.
+A responsie recipe website built with HTML,CSS,JavaScript,and Bootstrap.
 
 ## Features
 - Responsive layout
